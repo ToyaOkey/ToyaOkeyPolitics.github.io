@@ -1,0 +1,285 @@
+/* ============================================= */
+/* ========== GLOBAL STYLES & TYPOGRAPHY ======= */
+/* ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    margin: 40px auto;
+    max-width: 900px;
+    line-height: 1.8;
+    background: #4b4a4a;
+    color: #ffffff;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode a {
+    color: #82aaff !important;
+}
+
+.dark-mode nav {
+    background: #222 !important;
+}
+
+.dark-mode blockquote {
+    background: #222 !important;
+    color: #bbb !important;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4 {
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+/* ============================================= */
+/* ========== NAVIGATION BAR =================== */
+/* ============================================= */
+
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #555;
+    border-radius: 3px;
+}
+
+/* ============================================= */
+/* ========== LINKS & HOVER EFFECTS ============ */
+/* ============================================= */
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff5733;
+    text-shadow: 0px 0px 10px rgba(255, 87, 51, 0.8);
+}
+
+/* ============================================= */
+/* ========== IMAGE STYLES ===================== */
+/* ============================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================= */
+/* ========== CODE BLOCKS ====================== */
+/* ============================================= */
+
+pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 16px;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    background: #f4f4f4;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+/* Dark Mode for Code */
+.dark-mode pre {
+    background: #1e1e1e;
+}
+
+.dark-mode code {
+    background: #333;
+}
+
+/* ============================================= */
+/* ========== TABLE STYLES ===================== */
+/* ============================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+.dark-mode th {
+    background: #555;
+}
+
+/* ============================================= */
+/* ========== BLOCKQUOTES ====================== */
+/* ============================================= */
+
+blockquote {
+    border-left: 4px solid #0077cc;
+    background: #f4f4f4;
+    padding: 10px;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.dark-mode blockquote {
+    background: #222;
+    color: #bbb;
+}
+
+/* ============================================= */
+/* ========== ANIMATIONS ======================= */
+/* ============================================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in {
+    animation: slideIn 0.8s ease-out;
+}
+
+/* ============================================= */
+/* ========== BACK TO TOP BUTTON ============== */
+/* ============================================= */
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition: 0.3s;
+}
+
+#back-to-top:hover {
+    background: #005fa3;
+}
+
+/* ============================================= */
+/* ========== NEUMORPHIC BUTTONS ============== */
+/* ============================================= */
+
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+                -4px -4px 8px rgba(255, 255, 255, 0.7);
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3),
+                -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+button:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================= */
+/* ========== FOOTER ========================== */
+/* ============================================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 14px;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+.dark-mode footer {
+    background: #222;
+}
+
+/* ============================================= */
+/* ========== END OF STYLES =================== */
+/* ============================================= */

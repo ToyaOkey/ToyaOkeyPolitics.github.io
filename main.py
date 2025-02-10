@@ -44,6 +44,8 @@ def get_relative_image_path(current_md_path, image_name):
 # Function to convert Obsidian Markdown to HTML with correct links
 def convert_obsidian_to_html(content, current_md_path):
         # Convert image links ![[image.png]] to correct relative HTML <img> tags
+    relative_css_path = os.path.relpath(os.path.join(obsidian_vault_path, "styles.css"), os.path.dirname(current_md_path)).replace("\\", "/")
+
     def image_replacer(match):
         # print(match)
         image_name = match.group(1)
@@ -67,6 +69,7 @@ def convert_obsidian_to_html(content, current_md_path):
     output_format='html5', 
     enable_attributes=False
 )    # Wrap in a full HTML document
+
     full_html = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -74,6 +77,10 @@ def convert_obsidian_to_html(content, current_md_path):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{os.path.basename(current_md_path).replace('.md', '')}</title>
+        <link rel="stylesheet" href="{relative_css_path.replace("Politics", "")}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+        <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button> 
     </head>
     <body>
         {html_content}
